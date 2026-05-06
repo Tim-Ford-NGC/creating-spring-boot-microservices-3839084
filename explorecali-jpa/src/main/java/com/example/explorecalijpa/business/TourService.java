@@ -2,6 +2,7 @@ package com.example.explorecalijpa.business;
 
 import java.util.Collections;
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.stereotype.Service;
 
@@ -33,11 +34,11 @@ public class TourService {
   }
 
   public List<Tour> lookupByDifficulty(Difficulty difficulty) {
-    return Collections.emptyList();
+    return tourRepository.findByDifficulty(difficulty);
   }
 
   public List<Tour> lookupByPackage(String tourPackageCode) {
-    return Collections.emptyList();
+    return tourRepository.findByTourPackageCode(tourPackageCode);
   }
 
   public long total() {
